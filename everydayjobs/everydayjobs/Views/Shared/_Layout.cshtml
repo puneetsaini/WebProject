@@ -29,6 +29,18 @@
             </div>
         </header>
         <div id="body">
+            <section class="featured">
+                <div class="content-wrapper">
+                    <hgroup class="title">
+                        @*<h1>@ViewBag.Title.</h1>
+                        <h2>@ViewBag.Message</h2>*@
+                    </hgroup>
+                    <p>
+                        Some text here.
+                    </p>
+                </div>
+            </section>
+
             @RenderSection("featured", required: false)
             <section class="content-wrapper main-content clear-fix">
                 @RenderBody()
@@ -36,9 +48,23 @@
         </div>
         <footer>
             <div class="content-wrapper">
-                <div class="float-left">
-                    <p>&copy; @DateTime.Now.Year - TeamAwesome</p>
-                </div>
+                @*<div id="footer-content">*@
+                    <ul id="footer-content">
+                        <li>
+                            &copy; @DateTime.Now.Year - TeamAwesome
+                        </li>
+                        <li>
+                            @Html.ActionLink("Privacy", "Privacy", "Home")
+                        </li>
+                        <li>
+                            @Html.ActionLink("Term of Use", "Terms", "Home")
+                        </li>
+                        <li>
+                            @Html.ActionLink("Contact", "Contact", "Home")
+                        </li>
+                    </ul>
+                    
+                @*</div>*@
             </div>
         </footer>
 

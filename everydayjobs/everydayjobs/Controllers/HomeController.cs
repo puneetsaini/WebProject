@@ -28,5 +28,19 @@ namespace everydayjobs.Controllers
 
             return View();
         }
+
+        public ActionResult Terms()
+        {
+            ViewBag.Message = "Your Term page.";
+
+            return View();
+        }
+
+        public ActionResult Privacy()
+        {
+            ViewBag.Message = "Your Privacy page.";
+
+            return View();
+        }
     }
 }
