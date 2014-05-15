@@ -48,10 +48,10 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'localhost';
-$db['default']['username'] = '';
-$db['default']['password'] = '';
-$db['default']['database'] = '';
+$db['default']['hostname'] = 'everydayjob.db.8184438.hostedresource.com';
+$db['default']['username'] = 'everydayjob';
+$db['default']['password'] = 'Every@2014';
+$db['default']['database'] = 'everydayjob';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
