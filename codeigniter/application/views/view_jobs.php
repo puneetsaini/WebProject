@@ -10,10 +10,10 @@
     <title>Home</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="../css/bootstrap.css" rel="stylesheet">
 
     <!-- Add custom CSS here -->
-    <link href="css/half-slider.css" rel="stylesheet">
+    <link href="../css/half-slider.css" rel="stylesheet">
 
 </head>
 
@@ -64,22 +64,20 @@
             <div class="col-lg-12">
                 <h1>ADD CONTENT HERE</h1>
                 
-             
+             <?php
                 
-             <form action='login/process' method='post' name='process'>
-                <h2>Member Login</h2>
-                <br />   
-                <?php if(!is_null($msg)) echo $msg; ?>
-                <label for='username'>Username</label>
-                <input type='text' name='username' id='username' size='25' /><br />
-
-                <label for='password'>Password</label>
-                <input type='password' name='password' id='password' size='25' /><br />                            
-
-                <input type='Submit' value='Login' />            
-            </form>
-                
+             //print_r($results);
              
+             foreach ($results as $row)
+             {
+                 echo $row->j_category;
+                 echo $row->j_title;
+                 echo $row->j_description;
+                 echo $row->j_postdate;
+                 echo "<br />";
+             }
+            
+             ?>
              
             </div>
         </div>

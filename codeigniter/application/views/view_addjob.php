@@ -10,10 +10,10 @@
     <title>Home</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="../css/bootstrap.css" rel="stylesheet">
 
     <!-- Add custom CSS here -->
-    <link href="css/half-slider.css" rel="stylesheet">
+    <link href="../css/half-slider.css" rel="stylesheet">
 
 </head>
 
@@ -64,20 +64,34 @@
             <div class="col-lg-12">
                 <h1>ADD CONTENT HERE</h1>
                 
-             
+             <form method="post" id="addjob" action="insertJobs">
+                Category: <input type="text" name="cat" /> <br />
+                Title: <input type="text" name="title" /> <br />
+                Description: <input type="text" name="desc" /> <br />
+                Company ID: <input type="text" name="compID" /> <br />
+                <button type="submit" class="login-submit" name="login">Add Job</button>
+             </form>
                 
-             <form action='login/process' method='post' name='process'>
-                <h2>Member Login</h2>
-                <br />   
-                <?php if(!is_null($msg)) echo $msg; ?>
-                <label for='username'>Username</label>
-                <input type='text' name='username' id='username' size='25' /><br />
-
-                <label for='password'>Password</label>
-                <input type='password' name='password' id='password' size='25' /><br />                            
-
-                <input type='Submit' value='Login' />            
-            </form>
+             <?php
+             
+             // http://www.youtube.com/watch?v=jdN3tK-Oa-4
+             // http://www.youtube.com/watch?v=WjJhIcZ6918
+             // http://www.youtube.com/watch?v=lcpCFrjAiCw
+                
+             print_r($results);
+             
+             foreach ($results as $row)
+             {
+                 echo $row->j_category;
+                 echo $row->j_title;
+                 echo $row->j_description;
+                 echo $row->j_postdate;
+                 echo "<a href='getJobsById?j_id=" . $row->j_id . "'>Edit</a>";
+                 echo "<a href='deleteJob?j_id=" . $row->j_id . "'>Delete</a>";
+                 echo '<br />';
+             }
+            
+             ?>
                 
              
              

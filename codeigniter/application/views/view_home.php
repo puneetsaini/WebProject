@@ -24,10 +24,9 @@
             
             <div class="login">
        		  <form method="post" id="loginform" action="#">
-                        <input type="text" class="txtbox" name="uname" placeholder="Username" />
-                        <input type="text" class="txtbox" name="uname" placeholder="Password" />
-                        <button type="submit" class="login-submit" name="login">Login</button>
-                  </form>
+                        <input type="text" class="txtbox" name="uname" placeholder="Search" />
+                        <button type="submit" class="login-submit" name="search">Search</button>
+              </form>
             </div><!--/login-->
             
             <div class="navbar-header">
@@ -50,6 +49,8 @@
                     <li><a href="#contact">FAQ</a>
                     </li>
                     <li><a href="#register">Register</a>
+                    </li>
+					<li><a href="login">LOGIN</a>
                     </li>
                 </ul>
             </div>
