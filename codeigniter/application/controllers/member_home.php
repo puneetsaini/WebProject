@@ -10,9 +10,7 @@
     }
     
     public function index(){
-        // If the user is validated, then this function will run
-        echo 'Congratulations, you are logged in.';
-        echo '<br /><a href="'.base_url().'member_home/do_logout">Logout!</a>';
+         $this->load->view('view_memberhome');
     }
     
     private function check_isvalidated(){
