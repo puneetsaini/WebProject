@@ -102,8 +102,9 @@
 
         <div class="row section">
             <div class="col-lg-12">
-                <?php
-
+                
+                <h1>Member Login</h1>
+                <?php 
             // If the user is validated, then this function will run
                 echo 'Congratulations, you are logged in.';
                 echo '<br /><a href="'.base_url().'member_home/do_logout">Logout!</a>';
