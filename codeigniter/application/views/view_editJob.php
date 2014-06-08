@@ -14,6 +14,31 @@
 
     <!-- Add custom CSS here -->
     <link href="../css/half-slider.css" rel="stylesheet">
+    
+    <script>
+        function validateForm() {
+            var x = document.forms["editjobForm"]["cat"].value;
+            if (x==null || x=="") {
+                alert("Category must be filled out");
+                return false;
+            }
+            var y = document.forms["editjobForm"]["title"].value;
+            if (y==null || y=="") {
+                alert("Title must be filled out");
+                return false;
+            }
+            var z = document.forms["editjobForm"]["desc"].value;
+            if (z==null || z=="") {
+                alert("Description must be filled out");
+                return false;
+            }
+            var a = document.forms["editjobForm"]["date"].value;
+            if (a==null || a=="") {
+                alert("Date must be filled out");
+                return false;
+            }
+        }
+    </script>
 
 </head>
 
@@ -24,9 +49,8 @@
             
             <div class="login">
        		  <form method="post" id="loginform" action="#">
-                        <input type="text" class="txtbox" name="uname" placeholder="Username" />
-                        <input type="text" class="txtbox" name="uname" placeholder="Password" />
-                        <button type="submit" class="login-submit" name="login">Login</button>
+                        <input type="text" class="txtbox" name="uname" placeholder="Search" />
+                        <button type="submit" class="login-submit" name="search">Search</button>
                   </form>
             </div><!--/login-->
             
@@ -51,6 +75,8 @@
                     </li>
                     <li><a href="#register">Register</a>
                     </li>
+                    <li><a href="login">LOGIN</a>
+                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -62,20 +88,64 @@
 
         <div class="row section">
             <div class="col-lg-12">
-                <h1>ADD CONTENT HERE</h1>
+                <h1>EDIT JOB</h1>
                 
                 <?php
                 foreach ($results as $row){
                     
                 ?>
                 
-             <form method="post" id="addjob" action="updateJob">
+             <form name="editjobForm" method="post" id="addjob" action="updateJob" onsubmit="return validateForm()">
                 <input type="hidden" name="id" value="<?php echo $row->j_id; ?>" />
                 <input type="hidden" name="compId" value="<?php echo $row->j_mid; ?>" />
-                Category: <input type="text" name="cat" value="<?php echo $row->j_category; ?>" /> <br />
-                Title: <input type="text" name="title" value="<?php echo $row->j_title; ?>" /> <br />
-                Description: <input type="text" name="desc" value="<?php echo $row->j_description; ?>" /> <br />
-                Date: <input type="text" name="date" value="<?php echo $row->j_postdate; ?>" /> <br />
+                
+                <table>
+                        <tr>
+                            <td>
+                                Category: 
+                            </td>
+                            <td>
+                                <input type="text" name="cat" value="<?php echo $row->j_category; ?>" />
+                            </td>
+                        </tr>
+                        
+                        <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+                        
+                        <tr>
+                            <td>
+                                Title:
+                            </td>
+                            <td>
+                                <input type="text" name="title" value="<?php echo $row->j_title; ?>" />
+                            </td>
+                        </tr>
+                        
+                        <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+                        
+                        <tr>
+                            <td>
+                                Description:
+                            </td>
+                            <td>
+                                <textarea name="desc" cols="25" rows="5"><?php echo $row->j_description; ?></textarea>
+                            </td>
+                        </tr>
+                        
+                        <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+                        
+                        <tr>
+                            <td>
+                                Date:
+                            </td>
+                            <td>
+                                <input type="text" name="date" value="<?php echo $row->j_postdate; ?>" />
+                            </td>
+                        </tr>
+                        
+                        <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+                        
+                    </table>
+                
                 <button type="submit" class="login-submit" name="login">Update</button>
              </form>
                 
@@ -85,16 +155,7 @@
                 
              <?php
                 
-             print_r($results);
-             
-             foreach ($results as $row)
-             {
-                 echo $row->j_category;
-                 echo $row->j_title;
-                 echo $row->j_description;
-                 echo $row->j_postdate;
-                 echo '<br />';
-             }
+             //print_r($results);
             
              ?>
                 

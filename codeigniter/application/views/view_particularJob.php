@@ -10,10 +10,10 @@
     <title>Home</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="../css/bootstrap.css" rel="stylesheet">
 
     <!-- Add custom CSS here -->
-    <link href="css/half-slider.css" rel="stylesheet">
+    <link href="../css/half-slider.css" rel="stylesheet">
 
 </head>
 
@@ -59,78 +59,83 @@
         <!-- /.container -->
     </nav>
 
-    <div id="myCarousel" class="carousel slide">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-        </ol>
-
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner">
-            <div class="item active">
-                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide One');"></div>
-                <div class="carousel-caption">
-                    <h1>A Full-Width Image Slider Template</h1>
-                </div>
-            </div>
-            <div class="item">
-                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Two');"></div>
-                <div class="carousel-caption">
-                    <h1>Caption 2</h1>
-                </div>
-            </div>
-            <div class="item">
-                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Three');"></div>
-                <div class="carousel-caption">
-                    <h1>Caption 3</h1>
-                </div>
-            </div>
-        </div>
-
-        <!-- Controls -->
-        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-            <span class="icon-prev"></span>
-        </a>
-        <a class="right carousel-control" href="#myCarousel" data-slide="next">
-            <span class="icon-next"></span>
-        </a>
-    </div>
-
     <div class="container">
 
         <div class="row section">
             <div class="col-lg-12">
-                <h1>ADD CONTENT HERE</h1>
-                
-                <?php
-                
-                //print_r($results);
-
-                foreach ($results as $row)
-                {
-                    echo "<a href='applyJob?j_id=" . $row->j_id . "'>" . $row->j_title . "</a>";
-                    echo "<div style='float: right;'>";
-                    echo '<img src="images/clock.gif" alt="clock" /> &nbsp;';
-                    echo $row->j_postdate;
-                    echo "</div><br />";
-                }
-
-                ?>
+                <h1>JOB DESCRIPTION</h1>
                 
              <?php
-                //$sql = "SELECT * FROM jobs";
-                //$result = mysql_query($sql);
-
-                //echo "<select name='PcID'>";
-                //while ($row = mysql_fetch_array($result)) {
-                //    echo "<option value='" . $row['j_title'] . "'>" . $row['j_title'] . "</option>";
-                //}
-                //echo "</select>";
+                
+             //print_r($results);
+             
+             foreach ($results as $row)
+             {
+                 echo "<strong>Category:</strong> " . $row->j_category . "<br />";
+                 echo "<strong>Title:</strong> " . $row->j_title . "<br />";
+                 echo "<strong>Description:</strong> " . $row->j_description;
+                 echo "<br />";
+             }
             
              ?>
              
+                <hr />
+                
+                <h3>Apply for this job</h3> <br />
+                
+                <form action="sendEmail" method="post" name="mainform" enctype="multipart/form-data">
+        
+                    <table>
+                        <tr>
+                            <td>
+                                Name*: 
+                            </td>
+                            <td>
+                                <input type="text" name="name" />
+                            </td>
+                        </tr>
+                        
+                        <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+                        
+                        <tr>
+                            <td>
+                                Email*: 
+                            </td>
+                            <td>
+                                <input type="text" name="email" />
+                            </td>
+                        </tr>
+                        
+                        <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+                        
+                        <tr>
+                            <td>
+                                Cover Letter*:
+                            </td>
+                            <td>
+                                <textarea name="message" cols="25" rows="5"></textarea>
+                            </td>
+                        </tr>
+                        
+                        <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+                        
+                        <tr>
+                            <td>
+                                Upload Resume*:
+                            </td>
+                            <td>
+                                <input type="file" name="filename" id="tele">
+                            </td>
+                        </tr>
+                        
+                        <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+                        
+                    </table>
+
+                        <br /><br />
+                        <button type="submit" class="buyButton" name="apply">Apply</button>
+                </form>
+                
             </div>
         </div>
 
@@ -160,9 +165,9 @@
                     <nav class="footer_col">
                                     SOCIAL
                       <ul>
-                        <li><a href="#"><img src="images/f.jpg" alt="logo" border="0" /></a><li>
-                       <li><a href="#"><img src="images/t.jpg" alt="logo" border="0" /></a></li>
-                       <li><a href="#"><img src="images/g.jpg" alt="logo" border="0" /></a></li>
+                        <li><a href="#"><img src="../images/f.jpg" alt="logo" border="0" /></a><li>
+                       <li><a href="#"><img src="../images/t.jpg" alt="logo" border="0" /></a></li>
+                       <li><a href="#"><img src="../images/g.jpg" alt="logo" border="0" /></a></li>
                     </ul>
                     </nav><!--/footer_col-->
                 </div>

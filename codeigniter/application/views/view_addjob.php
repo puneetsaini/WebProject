@@ -14,6 +14,26 @@
 
     <!-- Add custom CSS here -->
     <link href="../css/half-slider.css" rel="stylesheet">
+    
+    <script>
+        function validateForm() {
+            var x = document.forms["addjobForm"]["cat"].value;
+            if (x==null || x=="") {
+                alert("Category must be filled out");
+                return false;
+            }
+            var y = document.forms["addjobForm"]["title"].value;
+            if (y==null || y=="") {
+                alert("Title must be filled out");
+                return false;
+            }
+            var z = document.forms["addjobForm"]["desc"].value;
+            if (z==null || z=="") {
+                alert("Description must be filled out");
+                return false;
+            }
+        }
+    </script>
 
 </head>
 
@@ -24,9 +44,8 @@
             
             <div class="login">
        		  <form method="post" id="loginform" action="#">
-                        <input type="text" class="txtbox" name="uname" placeholder="Username" />
-                        <input type="text" class="txtbox" name="uname" placeholder="Password" />
-                        <button type="submit" class="login-submit" name="login">Login</button>
+                        <input type="text" class="txtbox" name="uname" placeholder="Search" />
+                        <button type="submit" class="login-submit" name="search">Search</button>
                   </form>
             </div><!--/login-->
             
@@ -51,6 +70,8 @@
                     </li>
                     <li><a href="#register">Register</a>
                     </li>
+                    <li><a href="login">LOGIN</a>
+                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -62,15 +83,79 @@
 
         <div class="row section">
             <div class="col-lg-12">
-                <h1>ADD CONTENT HERE</h1>
+                <h1>ADD JOBS</h1>
                 
-             <form method="post" id="addjob" action="insertJobs">
-                Category: <input type="text" name="cat" /> <br />
-                Title: <input type="text" name="title" /> <br />
-                Description: <input type="text" name="desc" /> <br />
-                Company ID: <input type="text" name="compID" /> <br />
+             <form name="addjobForm" method="post" id="addjob" action="insertJobs" onsubmit="return validateForm()">
+                
+                <table>
+                        <tr>
+                            <td>
+                                Category: 
+                            </td>
+                            <td>
+                                <select name="cat">
+                                    <option value="" disabled="disabled" selected="selected">Select Job Category</option>
+                                    <option value="Accounting">Accounting</option>
+                                    <option value="Banking">Banking</option>
+                                    <option value="Hotels">Hotels</option>
+                                    <option value="Sales">Sales</option>
+                                    <option value="Marketing">Marketing</option>
+                                    <option value="Customer Service">Customer Service</option>
+                                    <option value="Mechanics">Mechanics</option>
+                                    <option value="Education">Education</option>
+                                    <option value="IT">IT</option>
+                                    <option value="Architecture">Architecture</option>
+                                    <option value="Engineering">Engineering</option>
+                                    <option value="Management">Management</option>
+                                    <option value="Human Resources">Human Resources</option>
+                                    <option value="Media">Media</option>
+                                    <option value="Others">Others</option>
+                                </select>
+                            </td>
+                        </tr>
+                        
+                        <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+                        
+                        <tr>
+                            <td>
+                                Title:
+                            </td>
+                            <td>
+                                <input type="text" name="title" />
+                            </td>
+                        </tr>
+                        
+                        <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+                        
+                        <tr>
+                            <td>
+                                Description:
+                            </td>
+                            <td>
+                                <textarea name="desc" cols="25" rows="5"></textarea>
+                            </td>
+                        </tr>
+                        
+                        <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+                        
+                        <tr>
+                            <td>
+                                Company ID - SOULD BE CHANGE TO HIDDEN FIELD
+                            </td>
+                            <td>
+                                <input type="text" name="compID" />
+                            </td>
+                        </tr>
+                        
+                        <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+                        
+                    </table>
+                
                 <button type="submit" class="login-submit" name="login">Add Job</button>
+                
              </form>
+                
+                <h3>JOBS POSTED</h3>
                 
              <?php
              
@@ -78,16 +163,21 @@
              // http://www.youtube.com/watch?v=WjJhIcZ6918
              // http://www.youtube.com/watch?v=lcpCFrjAiCw
                 
-             print_r($results);
+             //print_r($results);
+             $output = '';
+             echo $output;
              
              foreach ($results as $row)
              {
-                 echo $row->j_category;
-                 echo $row->j_title;
-                 echo $row->j_description;
-                 echo $row->j_postdate;
                  echo "<a href='getJobsById?j_id=" . $row->j_id . "'>Edit</a>";
+                 echo '&nbsp;&nbsp;';
                  echo "<a href='deleteJob?j_id=" . $row->j_id . "'>Delete</a>";
+                 echo '&nbsp;&nbsp;';
+                 echo $row->j_postdate;
+                 echo '&nbsp;&nbsp;';
+                 //echo $row->j_category;
+                 echo $row->j_title;
+                 //echo $row->j_description;
                  echo '<br />';
              }
             

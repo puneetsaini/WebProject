@@ -24,9 +24,8 @@
             
             <div class="login">
        		  <form method="post" id="loginform" action="#">
-                        <input type="text" class="txtbox" name="uname" placeholder="Username" />
-                        <input type="text" class="txtbox" name="uname" placeholder="Password" />
-                        <button type="submit" class="login-submit" name="login">Login</button>
+                        <input type="text" class="txtbox" name="uname" placeholder="Search" />
+                        <button type="submit" class="login-submit" name="search">Search</button>
                   </form>
             </div><!--/login-->
             
@@ -51,6 +50,8 @@
                     </li>
                     <li><a href="#register">Register</a>
                     </li>
+                    <li><a href="login">LOGIN</a>
+                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -62,7 +63,7 @@
 
         <div class="row section">
             <div class="col-lg-12">
-                <h1>ADD CONTENT HERE</h1>
+                <h1>AVAILABLE JOBS</h1>
                 
              <?php
                 
@@ -70,11 +71,11 @@
              
              foreach ($results as $row)
              {
-                 echo $row->j_category;
-                 echo $row->j_title;
-                 echo $row->j_description;
+                 echo "<a href='applyJob?j_id=" . $row->j_id . "'>" . $row->j_title . "</a>";
+                 echo "<div style='float: right;'>";
+                 echo '<img src="../images/clock.gif" alt="clock" /> &nbsp;';
                  echo $row->j_postdate;
-                 echo "<br />";
+                 echo "</div><br />";
              }
             
              ?>
