@@ -38,7 +38,9 @@ class Site extends CI_Controller {
     {
         $this->load->model("get_job");
         
-        $data['results'] = $this->get_job->getAll();
+        $jobcat = $_GET["j_category"];
+        
+        $data['results'] = $this->get_job->getAllByJob($jobcat);
         
         $this->load->view("view_jobs", $data);
     }
