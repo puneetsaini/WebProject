@@ -78,7 +78,9 @@ class Site extends CI_Controller {
         );
         
         $this->get_job->insert1($newJob);
-        echo 'inserted';
+        //echo 'inserted';
+		
+		$this->load->view("view_jobInserted");
     }
     
     function updateJob()
@@ -117,7 +119,10 @@ class Site extends CI_Controller {
         
         $this->get_job->delete1($oldRow);
         
-        echo 'deleted';
+        //echo 'deleted';
+        $data['results'] = $this->get_job->getCompJob();
+        
+        $this->load->view("view_addjob", $data);
     }
     
     function applyJob()
@@ -149,7 +154,7 @@ class Site extends CI_Controller {
 		    'smtp_host' => 'ssl://smtp.googlemail.com',
 		    'smtp_port' => 465,
 		    'smtp_user' => 'ybeedah@gmail.com',
-		    'smtp_pass' => 'yash7715776',
+		    'smtp_pass' => 'password',
 		    'smtp_timeout' => '4',
 		    'mailtype'  => 'text', 
 		    'charset'   => 'iso-8859-1'
@@ -170,7 +175,8 @@ class Site extends CI_Controller {
 		 				
 		// forward to index page
 		//$this->load->view('index', $data);
-                echo 'aa';
+        
+		$this->load->view("view_jobapplication");
     
         
     }

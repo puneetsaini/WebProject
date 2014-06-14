@@ -63,12 +63,11 @@
 
         <div class="row section">
             <div class="col-lg-12">
-                <h1>How It Works</h1>
+                <h1>Application Sent Successfully</h1>
              
                 
-                <p>everydayjobs is a website where companies can post jobs.</p>
+                <p>Thank you for your application! The company will soon contact you.</p>
                 
-                <p>Visitors will be able to view any jobs and apply.</p>
             </div>
         </div>
 
