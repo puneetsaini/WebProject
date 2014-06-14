@@ -7,6 +7,13 @@ class Get_job extends CI_Model{
         
         return $query->result();
     }
+	
+	function getAllByJob($jobcat)
+    {
+        $query = $this->db->query("SELECT * FROM jobs WHERE j_category = '". $jobcat ."'");
+        
+        return $query->result();
+    }
     
     function getCompJob()
     {

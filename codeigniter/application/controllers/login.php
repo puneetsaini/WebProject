@@ -6,12 +6,10 @@ class Login extends CI_Controller {
          $this->load->helper('url');  
         
     }
-    public function index(){
+    public function index($msg = NULL){
         // Load our view to be displayed
         // to the user
-        $msg='';
-        $data['msg']=$msg;
-        
+        $data['msg'] = $msg;
         $this->load->view('view_login', $data);
     }
     public function process(){
@@ -23,7 +21,7 @@ class Login extends CI_Controller {
         if(! $result){
             // If user did not validate, then show them login page again
             $msg = '<font color=red>Invalid usrname or password</font><br/>';
-            $this->index();
+            $this->index($msg);
         }else{
             // If user did validate, 
             // Send them to members area

@@ -737,6 +737,23 @@ pre code {
   margin-right: auto;
   margin-left: auto;
 }
+#cat-nav {
+    float: right;
+}
+#cat-nav ul {
+    list-style-type: none;
+    margin: 10px;
+}
+#cat-nav li {
+    display: block;
+    border: 1px solid #FFE8E8;
+    background-color: #FFE8E8;
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    padding: 5px 1px 5px 1px;
+    margin: 0 10px 3px 20px;
+    text-align: center;
+}
 @media (min-width: 768px) {
   .container {
     width: 750px;

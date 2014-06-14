@@ -7,7 +7,13 @@ class Site extends CI_Controller {
         $this->home();
     }
     public function home(){
-        $this->load->view("view_home");
+        //$this->load->view("view_home");
+		
+		$this->load->model("get_job");
+        
+        $data['results'] = $this->get_job->getAll();
+        
+        $this->load->view("view_home", $data);
     }
 
     public function join()
@@ -32,7 +38,9 @@ class Site extends CI_Controller {
     {
         $this->load->model("get_job");
         
-        $data['results'] = $this->get_job->getAll();
+        $jobcat = $_GET["j_category"];
+        
+        $data['results'] = $this->get_job->getAllByJob($jobcat);
         
         $this->load->view("view_jobs", $data);
     }
@@ -90,7 +98,13 @@ class Site extends CI_Controller {
         
         $this->get_job->update1($newRow);
         
-        echo 'updated';
+        //$this->load->model("get_job");
+        
+        $data['results'] = $this->get_job->getCompJob();
+        
+        $this->load->view("view_addjob", $data);
+        
+        //echo 'updated';
     }
     
     function deleteJob()
@@ -104,6 +118,61 @@ class Site extends CI_Controller {
         $this->get_job->delete1($oldRow);
         
         echo 'deleted';
+    }
+    
+    function applyJob()
+    {
+        $this->load->model("get_job");
+        
+        $jobid = $_GET["j_id"];
+        
+        $data['results'] = $this->get_job->getjobbyid($jobid);
+        
+        $this->load->view("view_particularJob", $data);
+    }
+    
+    function sendEmail()
+    {
+        // http://www.technicalkeeda.com/details/how-to-send-email-using-php-codeigniter
+        // http://blog.daanraman.com/coding/codeigniter/sending-smtp-mail-through-gmail-in-codeigniter/
+        // http://ellislab.com/codeigniter/user-guide/libraries/email.html
+        
+        // check out this video later - attachment - https://www.youtube.com/watch?v=EXdomfSFnUg
+        
+        $from = $_POST["email"];
+        $name = $_POST["name"];
+        $msg = $_POST["message"];
+        $file = $_FILES["filename"];
+        
+        $config = Array(		
+		    'protocol' => 'smtp',
+		    'smtp_host' => 'ssl://smtp.googlemail.com',
+		    'smtp_port' => 465,
+		    'smtp_user' => 'ybeedah@gmail.com',
+		    'smtp_pass' => 'yash7715776',
+		    'smtp_timeout' => '4',
+		    'mailtype'  => 'text', 
+		    'charset'   => 'iso-8859-1'
+		);
+ 
+		$this->load->library('email', $config);
+		$this->email->set_newline("\r\n");	
+		$this->email->from($from, $name);
+		$this->email->to("ybeedah@gmail.com");
+		//$this->email->cc("ybeedah@gmail.com");
+		$this->email->subject("Job Application");
+		$this->email->message($msg);
+			
+		$data['message'] = "Sorry Unable to send email...";	
+		if($this->email->send()){					
+			$data['message'] = "Mail sent...";			
+		}	
+		 				
+		// forward to index page
+		//$this->load->view('index', $data);
+                echo 'aa';
+    
+        
     }
     
 }

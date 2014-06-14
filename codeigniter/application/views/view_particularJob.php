@@ -63,7 +63,7 @@
 
         <div class="row section">
             <div class="col-lg-12">
-                <h1>AVAILABLE JOBS</h1>
+                <h1>JOB DESCRIPTION</h1>
                 
              <?php
                 
@@ -71,15 +71,71 @@
              
              foreach ($results as $row)
              {
-                 echo "<a href='applyJob?j_id=" . $row->j_id . "'>" . $row->j_title . "</a>";
-                 echo "<div style='float: right;'>";
-                 echo '<img src="../images/clock.gif" alt="clock" /> &nbsp;';
-                 echo $row->j_postdate;
-                 echo "</div><br />";
+                 echo "<strong>Category:</strong> " . $row->j_category . "<br />";
+                 echo "<strong>Title:</strong> " . $row->j_title . "<br />";
+                 echo "<strong>Description:</strong> " . $row->j_description;
+                 echo "<br />";
              }
             
              ?>
              
+                <hr />
+                
+                <h3>Apply for this job</h3> <br />
+                
+                <form action="sendEmail" method="post" name="mainform" enctype="multipart/form-data">
+        
+                    <table>
+                        <tr>
+                            <td>
+                                Name*: 
+                            </td>
+                            <td>
+                                <input type="text" name="name" />
+                            </td>
+                        </tr>
+                        
+                        <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+                        
+                        <tr>
+                            <td>
+                                Email*: 
+                            </td>
+                            <td>
+                                <input type="text" name="email" />
+                            </td>
+                        </tr>
+                        
+                        <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+                        
+                        <tr>
+                            <td>
+                                Cover Letter*:
+                            </td>
+                            <td>
+                                <textarea name="message" cols="25" rows="5"></textarea>
+                            </td>
+                        </tr>
+                        
+                        <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+                        
+                        <tr>
+                            <td>
+                                Upload Resume*:
+                            </td>
+                            <td>
+                                <input type="file" name="filename" id="tele">
+                            </td>
+                        </tr>
+                        
+                        <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+                        
+                    </table>
+
+                        <br /><br />
+                        <button type="submit" class="buyButton" name="apply">Apply</button>
+                </form>
+                
             </div>
         </div>
 
