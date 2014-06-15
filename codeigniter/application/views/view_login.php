@@ -77,10 +77,7 @@
 
         <div class="row section">
             <div class="col-lg-12">
-                <h1>ADD CONTENT HERE</h1>
-                
-             
-                
+               
              <form action='login/process' onsubmit="return(validate())" method='post' name='process'>
                 <h2>Member Login</h2>
                 <br />   
