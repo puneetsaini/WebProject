@@ -27,7 +27,7 @@
                         <input type="text" class="txtbox" name="uname" placeholder="Search" />
                         <button type="submit" class="login-submit" name="search">Search</button>
                   </form>
-            </div><!--/login-->
+            </div><!--/search-->
             
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">

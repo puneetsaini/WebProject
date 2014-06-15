@@ -38,7 +38,12 @@
     <nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
         <div class="container">
             
-            
+             <div class="login">
+       		  <form method="post" id="loginform" action="search">
+                        <input type="text" class="txtbox" name="uname" placeholder="Search" />
+                        <button type="submit" class="login-submit" name="search">Search</button>
+                  </form>
+            </div><!--/search-->
             
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -55,9 +60,9 @@
                 <ul class="nav navbar-nav">
                     <li><a href="#about">Home</a>
                     </li>
-                    <li><a href="#services">How It Works</a>
+                    <li><a href="services">How It Works</a>
                     </li>
-                    <li><a href="#contact">FAQ</a>
+                    <li><a href="faq">FAQ</a>
                     </li>
                     <li><a href="#register">Register</a>
                     </li>

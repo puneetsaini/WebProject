@@ -69,9 +69,9 @@
                 <ul class="nav navbar-nav">
                     <li><a href="#about">Home</a>
                     </li>
-                    <li><a href="#services">How It Works</a>
+                    <li><a href="services">How It Works</a>
                     </li>
-                    <li><a href="#contact">FAQ</a>
+                    <li><a href="faq">FAQ</a>
                     </li>
                     <li><a href="#register">Register</a>
                     </li>
