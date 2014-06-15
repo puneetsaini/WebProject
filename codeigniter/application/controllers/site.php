@@ -20,10 +20,7 @@ class Site extends CI_Controller {
     {
         $this->load->view("view_join");
     }
-    public function howitworks()
-    {
-        $this->load->view("view_howitworks");
-    }
+    
     public function faq()
     {
         $this->load->view("view_faq");

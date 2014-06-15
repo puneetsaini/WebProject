@@ -46,7 +46,7 @@
                     </li>
                     <li><a href="services">How It Works</a>
                     </li>
-                    <li><a href="#contact">FAQ</a>
+                    <li><a href="faq">FAQ</a>
                     </li>
                     <li><a href="#register">Register</a>
                     </li>
