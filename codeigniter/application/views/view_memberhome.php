@@ -18,6 +18,7 @@
 
 </head>
 
+
 <body>
 
     <nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
@@ -25,9 +26,8 @@
             
             <div class="login">
        		  <form method="post" id="loginform" action="#">
-                        <input type="text" class="txtbox" name="uname" placeholder="Username" />
-                        <input type="text" class="txtbox" name="uname" placeholder="Password" />
-                        <button type="submit" class="login-submit" name="login">Login</button>
+                        <input type="text" class="txtbox" name="uname" placeholder="Search" />
+                        <button type="submit" class="login-submit" name="search">Search</button>
                   </form>
             </div><!--/login-->
             
@@ -52,6 +52,8 @@
                     </li>
                     <li><a href="#register">Register</a>
                     </li>
+                    <li><a href="login">LOGIN</a>
+                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -70,21 +72,21 @@
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
             <div class="item active">
-                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide One');"></div>
+                <div class="fill" style="background-image:url('http://ghana.buzzsouthafrica.com/wp-content/uploads/sites/2/2014/03/job-hunting1.jpg');"></div>
                 <div class="carousel-caption">
-                    <h1>A Full-Width Image Slider Template</h1>
+                    <h1>Find Jobs Easily</h1>
                 </div>
             </div>
             <div class="item">
-                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Two');"></div>
+                <div class="fill" style="background-image:url('http://cartoonpapers.com/wp-content/uploads/2014/03/the-nut-job-26346-1920x1080.jpg');"></div>
                 <div class="carousel-caption">
-                    <h1>Caption 2</h1>
+                    <h1>Right Website For You</h1>
                 </div>
             </div>
             <div class="item">
-                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide Three');"></div>
+                <div class="fill" style="background-image:url('http://sacramentocityexpress.files.wordpress.com/2014/02/skyline8x10.jpg');"></div>
                 <div class="carousel-caption">
-                    <h1>Caption 3</h1>
+                    <h1>About Us</h1>
                 </div>
             </div>
         </div>
@@ -97,6 +99,7 @@
             <span class="icon-next"></span>
         </a>
     </div>
+
 
     <div class="container">
 
@@ -114,7 +117,7 @@
 
         <hr>
 
-        <footer>
+       <footer>
             <div class="row">
                 <div class="col-lg-12">
                     <nav class="footer_col">

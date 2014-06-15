@@ -130,14 +130,15 @@
                     <nav class="footer_col">
                                     SOCIAL
                       <ul>
-                        <li><a href="#"><img src="../images/f.jpg" alt="logo" border="0" /></a><li>
-                       <li><a href="#"><img src="../images/t.jpg" alt="logo" border="0" /></a></li>
-                       <li><a href="#"><img src="../images/g.jpg" alt="logo" border="0" /></a></li>
+                        <li><a href="#"><img src="images/f.jpg" alt="logo" border="0" /></a><li>
+                       <li><a href="#"><img src="images/t.jpg" alt="logo" border="0" /></a></li>
+                       <li><a href="#"><img src="images/g.jpg" alt="logo" border="0" /></a></li>
                     </ul>
                     </nav><!--/footer_col-->
                 </div>
             </div>
         </footer>
+
 
     </div>
     <!-- /.container -->
