@@ -38,13 +38,7 @@
     <nav class="navbar navbar-fixed-top navbar-inverse" role="navigation">
         <div class="container">
             
-            <div class="login">
-       		  <form method="post" id="loginform" action="#">
-                        <input type="text" class="txtbox" name="uname" placeholder="Username" />
-                        <input type="text" class="txtbox" name="uname" placeholder="Password" />
-                        <button type="submit" class="login-submit" name="login">Login</button>
-                  </form>
-            </div><!--/login-->
+            
             
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
@@ -98,6 +92,7 @@
            <DIV id="une">
              <?php if(filter_input(INPUT_GET,'message')!=""){
                   echo "Username or password is incorrect";
+                  
               }?>
          </DIV> </font><br>
              
