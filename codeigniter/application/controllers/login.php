@@ -20,7 +20,7 @@ class Login extends CI_Controller {
         // Now we verify the result
         if(! $result){
             // If user did not validate, then show them login page again
-            $msg = '<font color=red>Invalid usrname or password</font><br/>';
+            $msg = '<font color=red>Invalid username or password</font><br/>';
             $this->index($msg);
         }else{
             // If user did validate, 
