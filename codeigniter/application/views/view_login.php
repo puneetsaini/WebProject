@@ -14,6 +14,22 @@
 
     <!-- Add custom CSS here -->
     <link href="css/half-slider.css" rel="stylesheet">
+    <script type="text/javascript">
+           function validate()
+           {
+               
+               if((document.process.username.value=="") || (document.process.password.value=="")){
+  document.getElementById('une').innerHTML = "User name or password  should not be empty";
+  process.username.focus();
+  return(false);
+               
+           }
+           
+
+}
+                                
+            </script>
+            
 
 </head>
 
@@ -66,7 +82,7 @@
                 
              
                 
-             <form action='login/process' method='post' name='process'>
+             <form action='login/process' onsubmit="return(validate())" method='post' name='process'>
                 <h2>Member Login</h2>
                 <br />   
                 <?php if(!is_null($msg)) echo $msg; ?>
@@ -78,8 +94,12 @@
 
                 <input type='Submit' value='Login' />            
             </form>
-                
-             
+           <font color='red'>
+           <DIV id="une">
+             <?php if(filter_input(INPUT_GET,'message')!=""){
+                  echo "Username or password is incorrect";
+              }?>
+         </DIV> </font><br>
              
             </div>
         </div>
