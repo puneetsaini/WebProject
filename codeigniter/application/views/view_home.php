@@ -23,7 +23,7 @@
         <div class="container">
             
             <div class="login">
-       		  <form method="post" id="loginform" action="#">
+       		  <form method="post" id="loginform" action="search">
                         <input type="text" class="txtbox" name="uname" placeholder="Search" />
                         <button type="submit" class="login-submit" name="search">Search</button>
                   </form>
