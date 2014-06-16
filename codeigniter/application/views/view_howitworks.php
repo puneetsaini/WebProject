@@ -11,7 +11,7 @@
 <div id="container">
 	<h1>How it works</h1>
         <a href="home">Home</a>
-        <a href="join">Join</a>
+        <a href="services">Join</a>
         <a href="howitworks">How it works</a>
         <a href="faq">FAQ</a>
 

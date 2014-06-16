@@ -50,7 +50,7 @@
                     </li>
                     <li><a href="faq">FAQ</a>
                     </li>
-                    <li><a href="#register">Register</a>
+                    <li><a href="register">Register</a>
                     </li>
                 </ul>
             </div>
