@@ -70,7 +70,7 @@
                     </li>
                     <li><a href="register">Register</a>
                     </li>
-                    <li><a href="login">LOGIN</a>
+                    <li><a href="'.base_url().'member_home/do_logout">LOGOUT</a>';
                     </li>
                 </ul>
             </div>
@@ -163,7 +163,7 @@
              // http://www.youtube.com/watch?v=WjJhIcZ6918
              // http://www.youtube.com/watch?v=lcpCFrjAiCw
                 
-             //print_r($results);
+             print_r($results);
              $output = '';
              echo $output;
              

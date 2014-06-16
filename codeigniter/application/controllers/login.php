@@ -25,8 +25,12 @@ class Login extends CI_Controller {
         }else{
             // If user did validate, 
             // Send them to members area
-            redirect('member_home');
-             
+            //redirect('member_home');
+             $this->load->model("get_job");
+        
+        $data['results'] = $this->get_job->getCompJob();
+        
+        $this->load->view("view_addjob", $data);
         }        
     }
      public function do_logout(){
