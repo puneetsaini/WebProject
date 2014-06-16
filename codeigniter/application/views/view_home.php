@@ -42,7 +42,7 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href="#about">Home</a>
+                    <li><a href="site">Home</a>
                     </li>
                     <li><a href="services">How It Works</a>
                     </li>
