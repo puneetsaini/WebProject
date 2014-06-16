@@ -140,10 +140,9 @@
                         
                         <tr>
                             <td>
-                                Company ID - SOULD BE CHANGE TO HIDDEN FIELD
                             </td>
                             <td>
-                                <input type="text" name="compID" />
+                                <input type="hidden" name="compID" value="1" />
                             </td>
                         </tr>
                         
