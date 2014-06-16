@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://localhost/codeigniter/';
+$config['base_url']	= 'http://localhost/GitHub/WebProject/codeigniter/';
 
 /*
 |--------------------------------------------------------------------------
@@ -224,7 +224,7 @@ $config['cache_path'] = '';
 | MUST set an encryption key.  See the user guide for info.
 |
 */
-$config['encryption_key'] = 'everydayjob';
+$config['encryption_key'] = '123puneet';
 
 /*
 |--------------------------------------------------------------------------
