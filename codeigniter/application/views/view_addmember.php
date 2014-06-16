@@ -17,14 +17,19 @@
     
     <script>
         function validateForm() {
-            var x = document.forms["addmemberForm"]["fname"].value;
+            var x = document.forms["addmemberForm"]["name"].value;
             if (x==null || x=="") {
-                alert("First Name must be filled out");
+                alert("Company Name must be filled out");
                 return false;
             }
-            var y = document.forms["addmemberForm"]["lname"].value;
+            var y = document.forms["addmemberForm"]["address"].value;
             if (y==null || y=="") {
-                alert("Last Name must be filled out");
+                alert("Address must be filled out");
+                return false;
+            }
+            var z = document.forms["addmemberForm"]["person"].value;
+            if (z==null || z=="") {
+                alert("Contact person Name must be filled out");
                 return false;
             }
             var z = document.forms["addmemberForm"]["username"].value;
@@ -35,6 +40,16 @@
             var z = document.forms["addmemberForm"]["passw"].value;
             if (z==null || z=="") {
                 alert("Password must be filled out");
+                return false;
+            }
+            var z = document.forms["addmemberForm"]["phone"].value;
+            if (z==null || z=="") {
+                alert("Telephone number must be filled out");
+                return false;
+            }
+            var z = document.forms["addmemberForm"]["email"].value;
+            if (z==null || z=="") {
+                alert("Email address must be filled out");
                 return false;
             }
         }

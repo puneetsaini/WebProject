@@ -55,15 +55,6 @@ class Register extends CI_Controller {
         $this->load->view("view_editcompany", $data);
     }
     
-    public function addmember()
-    {
-        $this->load->model("get_register");
-        
-        $data['results'] = $this->get_register->getCompJob();
-        
-        $this->load->view("view_addcompany", $data);
-    }
-    
     function insertMembers()
     {
         $this->load->model("get_register");
@@ -96,8 +87,7 @@ class Register extends CI_Controller {
             "c_pswd" => $_POST["password"],
             "c_tel" => $_POST["phone"],
             "c_email" => $_POST["email"]    
-                )
-            
+                )     
         );
         
         $this->get_register->update1($newRow);
@@ -127,49 +117,5 @@ class Register extends CI_Controller {
         $data['results'] = $this->get_register->getcompanybyid($companyid);
         
         $this->load->view("view_particularCompany", $data);
-    }
-    
-    function sendEmail1()
-    {
-        // http://www.technicalkeeda.com/details/how-to-send-email-using-php-codeigniter
-        // http://blog.daanraman.com/coding/codeigniter/sending-smtp-mail-through-gmail-in-codeigniter/
-        // http://ellislab.com/codeigniter/user-guide/libraries/email.html
-        
-        // check out this video later - attachment - https://www.youtube.com/watch?v=EXdomfSFnUg
-        
-        $to = $_POST["email"];
-        $name = $_POST["name"];
-        $msg = $_POST["message"];
-        $file = $_FILES["filename"];
-        
-        $config = Array(		
-		    'protocol' => 'smtp',
-		    'smtp_host' => 'ssl://smtp.googlemail.com',
-		    'smtp_port' => 465,
-		    'smtp_user' => 'ybeedah@gmail.com',
-		    'smtp_pass' => 'yash7715776',
-		    'smtp_timeout' => '4',
-		    'mailtype'  => 'text', 
-		    'charset'   => 'iso-8859-1'
-		);
- 
-		$this->load->library('email', $config);
-		$this->email->set_newline("\r\n");
-     		$this->email->from("ybeedah@gmail.com");
-		$this->email->to($to, $name);
-		$this->email->subject("Membership Accepted");
-		$this->email->message("We are pleased to inform that your membership has been processed.");
-			
-		$data['message'] = "Sorry Unable to send email...";	
-		if($this->email->send()){					
-			$data['message'] = "Mail sent...";			
-		}	
-		 				
-		// forward to index page
-		//$this->load->view('index', $data);
-                echo $data['message'];
-    
-        
-    }
-    
+    }    
 }
