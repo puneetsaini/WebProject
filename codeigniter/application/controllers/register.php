@@ -70,7 +70,32 @@ class Register extends CI_Controller {
         );
         
         $this->get_register->insert1($newMember);
-        echo 'inserted';
+        $to = $_POST["email"];
+        $name = $_POST["person"];
+        
+        $config = Array(		
+		    'protocol' => 'smtp',
+		    'smtp_host' => 'ssl://smtp.googlemail.com',
+		    'smtp_port' => 465,
+		    'smtp_user' => 'rezwanul61@gmail.com',
+		    'smtp_pass' => 'samia1992',
+		    'smtp_timeout' => '4',
+		    'mailtype'  => 'text', 
+		    'charset'   => 'iso-8859-1'
+		);
+ 
+		$this->load->library('email', $config);
+		$this->email->set_newline("\r\n");
+     		$this->email->from("rezwanul61@gmail.com");
+		$this->email->to($to, $name);
+		$this->email->subject("Membership Accepted");
+		$this->email->message("We are pleased to inform that your membership has been processed. We will send your login credential soon. Thank you.");
+			
+		$data['message'] = "Record added to the database but sorry Unable to send email to the receipient...";	
+		if($this->email->send()){					
+			$data['message'] = "Record added to the database and a Mail has ben sent...";			
+		}	
+                echo $data['message']; 
     }
     
     function updateMember()
@@ -117,5 +142,5 @@ class Register extends CI_Controller {
         $data['results'] = $this->get_register->getcompanybyid($companyid);
         
         $this->load->view("view_particularCompany", $data);
-    }    
+    }   
 }
