@@ -76,7 +76,7 @@
                          }
 
              ?>
-                
+               &nbsp;&nbsp;<a href="../">BACK</a> 
             </div>
         </div>
 
